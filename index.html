@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BCA Exam Time Table</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f3f4f6;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #fff;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            padding: 30px;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #4C2719;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        th, td {
+            padding: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        th {
+            background-color: #EABE6C;
+            color: white;
+            font-weight: 600;
+        }
+
+        td {
+            background-color: #FFEDD8;
+            color: #333;
+        }
+
+        /* Improve table row hover effect */
+        tr:hover td {
+            background-color: #F7DCB4;
+        }
+
+        /* Make the table responsive */
+        @media (max-width: 600px) {
+            table, th, td {
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 14px;
+            color: #777;
+        }
+
+        .footer a {
+            color: #891652;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>BCA Exam Time Table</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Program</th>
+                    <th>Course</th>
+                    <th>Exam Date</th>
+                    <th>Session</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>BCA_NEW</td>
+                    <td>BCS111</td>
+                    <td>19/12/2024</td>
+                    <td>Morning</td>
+                </tr>
+                <tr>
+                    <td>BCA_NEW</td>
+                    <td>BCS012</td>
+                    <td>21/12/2024</td>
+                    <td>Morning</td>
+                </tr>
+                <tr>
+                    <td>BCA_NEW</td>
+                    <td>BEVAE181</td>
+                    <td>04/01/2025</td>
+                    <td>Evening</td>
+                </tr>
+                <tr>
+                    <td>BCA_NEW</td>
+                    <td>BEGLA136</td>
+                    <td>09/01/2025</td>
+                    <td>Evening</td>
+                </tr>
+                <tr>
+                    <td>BCA_NEW</td>
+                    <td>BCSL013</td>
+                    <td>Practical</td>
+                    <td>--</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="footer">
+            <p>&copy; 2024 BCA Exam Time Table. All rights reserved. | <a href="#">Contact Us</a></p>
+        </div>
+    </div>
+
+</body>
+</html>
