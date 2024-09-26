@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BCA Exam Time Table</title>
     <style>
+        /* Global styles */
         * {
             margin: 0;
             padding: 0;
@@ -13,7 +14,7 @@
         }
 
         body {
-            background-color: #f3f4f6;
+            background-color: #f3f6fa;
             color: #333;
             display: flex;
             justify-content: center;
@@ -24,72 +25,141 @@
 
         .container {
             background-color: #fff;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
             border-radius: 12px;
-            padding: 30px;
+            padding: 20px;
             max-width: 900px;
             width: 100%;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .container:hover {
+            transform: scale(1.01);
         }
 
         h1 {
-            font-size: 28px;
+            font-size: 26px;
             margin-bottom: 20px;
             text-align: center;
-            color: #4C2719;
+            color: #2C3E50;
+            position: relative;
         }
 
+        h1::after {
+            content: '';
+            width: 100px;
+            height: 4px;
+            background-color: #3498DB;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -10px;
+        }
+
+        /* Styling for table */
         table {
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 20px;
             text-align: center;
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
         }
 
         th, td {
-            padding: 15px;
+            padding: 12px;
             border-bottom: 1px solid #e0e0e0;
+            font-size: 16px;
         }
 
         th {
-            background-color: #EABE6C;
+            background-color: #3498DB;
             color: white;
             font-weight: 600;
+            text-transform: uppercase;
         }
 
         td {
-            background-color: #FFEDD8;
+            background-color: #ECF0F1;
             color: #333;
         }
 
-        /* Improve table row hover effect */
-        tr:hover td {
-            background-color: #F7DCB4;
-        }
-
-        /* Make the table responsive */
-        @media (max-width: 600px) {
-            table, th, td {
-                font-size: 14px;
-                padding: 10px;
+        /* Card view for mobile */
+        @media (max-width: 768px) {
+            table, thead, tbody, th, td, tr {
+                display: block;
             }
 
-            .container {
-                padding: 20px;
+            thead tr {
+                display: none;
+            }
+
+            tr {
+                margin-bottom: 20px;
+                border: 1px solid #ddd;
+                border-radius: 12px;
+                padding: 10px;
+                background-color: #fff;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            td {
+                display: flex;
+                justify-content: space-between;
+                padding: 10px;
+                font-size: 14px;
+                border: none;
+                border-bottom: 1px solid #eee;
+                background-color: #ECF0F1;
+                font-weight: 500;
+            }
+
+            td:before {
+                content: attr(data-label);
+                font-weight: bold;
+                color: #2C3E50;
+                text-transform: uppercase;
+            }
+
+            td:last-child {
+                border-bottom: none;
             }
 
             h1 {
-                font-size: 22px;
+                font-size: 24px;
+            }
+
+            .container {
+                padding: 15px;
             }
         }
 
+        /* Further adjustments for smaller screens */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 18px;
+            }
+
+            td {
+                font-size: 12px;
+            }
+
+            .container {
+                padding: 10px;
+            }
+        }
+
+        /* Add a footer */
         .footer {
             text-align: center;
             font-size: 14px;
             color: #777;
+            margin-top: 10px;
         }
 
         .footer a {
-            color: #891652;
+            color: #3498DB;
             text-decoration: none;
         }
 
@@ -114,34 +184,34 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>BCA_NEW</td>
-                    <td>BCS111</td>
-                    <td>19/12/2024</td>
-                    <td>Morning</td>
+                    <td data-label="Program">BCA_NEW</td>
+                    <td data-label="Course">BCS111</td>
+                    <td data-label="Exam Date">19/12/2024</td>
+                    <td data-label="Session">Morning</td>
                 </tr>
                 <tr>
-                    <td>BCA_NEW</td>
-                    <td>BCS012</td>
-                    <td>21/12/2024</td>
-                    <td>Morning</td>
+                    <td data-label="Program">BCA_NEW</td>
+                    <td data-label="Course">BCS012</td>
+                    <td data-label="Exam Date">21/12/2024</td>
+                    <td data-label="Session">Morning</td>
                 </tr>
                 <tr>
-                    <td>BCA_NEW</td>
-                    <td>BEVAE181</td>
-                    <td>04/01/2025</td>
-                    <td>Evening</td>
+                    <td data-label="Program">BCA_NEW</td>
+                    <td data-label="Course">BEVAE181</td>
+                    <td data-label="Exam Date">04/01/2025</td>
+                    <td data-label="Session">Evening</td>
                 </tr>
                 <tr>
-                    <td>BCA_NEW</td>
-                    <td>BEGLA136</td>
-                    <td>09/01/2025</td>
-                    <td>Evening</td>
+                    <td data-label="Program">BCA_NEW</td>
+                    <td data-label="Course">BEGLA136</td>
+                    <td data-label="Exam Date">09/01/2025</td>
+                    <td data-label="Session">Evening</td>
                 </tr>
                 <tr>
-                    <td>BCA_NEW</td>
-                    <td>BCSL013</td>
-                    <td>Practical</td>
-                    <td>--</td>
+                    <td data-label="Program">BCA_NEW</td>
+                    <td data-label="Course">BCSL013</td>
+                    <td data-label="Exam Date">Practical</td>
+                    <td data-label="Session">--</td>
                 </tr>
             </tbody>
         </table>
